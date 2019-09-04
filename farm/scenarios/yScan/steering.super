@@ -3,7 +3,7 @@
 
 &InFiles
   ! Number of intput files
-    NInputFiles = 11
+    NInputFiles = $nFiles
  
   ! Input files:
 
@@ -16,39 +16,25 @@
       'datafiles/hera/h1zeusCombined/inclusiveDis/1506.06042/HERA1+2_CCep.dat',
       'datafiles/hera/h1zeusCombined/inclusiveDis/1506.06042/HERA1+2_CCem.dat',
 
-      'datafiles/lhc/cms/jets/13TeV/table_ak4_nll_y0.dat',
-      'datafiles/lhc/cms/jets/13TeV/table_ak4_nll_y1.dat',
-      'datafiles/lhc/cms/jets/13TeV/table_ak4_nll_y2.dat',
-      'datafiles/lhc/cms/jets/13TeV/table_ak4_nll_y3.dat',
+$y0   'datafiles/lhc/cms/jets/13TeV/table_ak4_nll_y0.dat',
+$y1   'datafiles/lhc/cms/jets/13TeV/table_ak4_nll_y1.dat',
+$y2   'datafiles/lhc/cms/jets/13TeV/table_ak4_nll_y2.dat',
+$y3   'datafiles/lhc/cms/jets/13TeV/table_ak4_nll_y3.dat',
 
 
-
-!    InputFileNames(1) = 'datafiles/hera/h1zeusCombined/inclusiveDis/1506.06042/HERA1+2_NCep_920.dat'
-!    InputFileNames(2) = 'datafiles/hera/h1zeusCombined/inclusiveDis/1506.06042/HERA1+2_NCep_820.dat'
-!    InputFileNames(3) = 'datafiles/hera/h1zeusCombined/inclusiveDis/1506.06042/HERA1+2_NCep_575.dat'
-!    InputFileNames(4) = 'datafiles/hera/h1zeusCombined/inclusiveDis/1506.06042/HERA1+2_NCep_460.dat'
-!    InputFileNames(5) = 'datafiles/hera/h1zeusCombined/inclusiveDis/1506.06042/HERA1+2_NCem.dat'
-!    InputFileNames(6) = 'datafiles/hera/h1zeusCombined/inclusiveDis/1506.06042/HERA1+2_CCep.dat'
-!    InputFileNames(7) = 'datafiles/hera/h1zeusCombined/inclusiveDis/1506.06042/HERA1+2_CCem.dat'
-!
-!    InputFileNames(8) = 'datafiles/lhc/cms/jets/13TeV/table_ak4_nll_y0.dat'
-!    InputFileNames(9) = 'datafiles/lhc/cms/jets/13TeV/table_ak4_nll_y1.dat'
-!    InputFileNames(10) = 'datafiles/lhc/cms/jets/13TeV/table_ak4_nll_y2.dat'
-!    InputFileNames(11) = 'datafiles/lhc/cms/jets/13TeV/table_ak4_nll_y3.dat'
 
 &End
 
 &InCorr
   ! Number of correlation (statistical, systematical or full) files
-    NCorrFiles = 4
+    NCorrFiles = $nCorrs
  
   ! Correlation files:
-    CorrFileNames = 
-       'datafiles/lhc/cms/jets/13TeV/table_ak4_y0.corr',
-       'datafiles/lhc/cms/jets/13TeV/table_ak4_y1.corr',
-       'datafiles/lhc/cms/jets/13TeV/table_ak4_y2.corr',
-       'datafiles/lhc/cms/jets/13TeV/table_ak4_y3.corr',
-
+    CorrFileNames =
+$y0    'datafiles/lhc/cms/jets/13TeV/table_ak4_y0.corr',
+$y1    'datafiles/lhc/cms/jets/13TeV/table_ak4_y1.corr',
+$y2    'datafiles/lhc/cms/jets/13TeV/table_ak4_y2.corr',
+$y3    'datafiles/lhc/cms/jets/13TeV/table_ak4_y3.corr',
 &End
 
 &CovarToNuisance
