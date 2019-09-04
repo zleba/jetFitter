@@ -42,3 +42,5 @@ for y in range(4):
     copyfile('minuit.in.super', 'variants/y'+str(y)+'/minuit.in.txt')
     copyfile('../../ewparam.txt', 'variants/y'+str(y)+'/ewparam.txt')
 
+    if not os.path.exists(dirName+'/logs'):
+        os.mkdir(dirName+'/logs')
