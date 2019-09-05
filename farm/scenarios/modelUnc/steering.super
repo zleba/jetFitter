@@ -119,7 +119,7 @@
 
   Order  = 'NLO'       ! 'LO', 'NLO' or 'NNLO', used for DGLAP evolution.
 
-  Q02     = 1.7 ! Evolution starting scale
+  Q02     = @Q02 ! Evolution starting scale
 
  ! --- Scheme for heavy flavors 
  ! ---  HF_SCHEME = 'ZMVFNS'           : ZM-VFNS (massless) from QCDNUM,
