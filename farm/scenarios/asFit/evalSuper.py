@@ -11,13 +11,14 @@ import os
 if not os.path.exists('variants'):
     os.mkdir('variants')
 
+scales = ((1,1), (2,1), (0.5,1), (1,2), (1,0.5), (2,2), (0.5,0.5) )
 
-for y in range(4):
-    dirName = 'variants/y'+str(y)
+for s in range(7):
+    dirName = 'variants/v'+str(s)
     if not os.path.exists(dirName):
         os.mkdir(dirName)
 
-    fName = 'variants/y'+str(y) + '/steering.txt'
+    fName = 'variants/v'+str(s) + '/steering.txt'
 
     fin = open('steering.super', "rt")
 
@@ -26,21 +27,14 @@ for y in range(4):
 
         for line in fin:
 
-            for ynow in range(4):
-                if ynow == y:
-                    line = line.replace('$y'+str(ynow), ' ')
-                else:
-                    line = line.replace('$y'+str(ynow), '!')
-            
-            line = line.replace('$nFiles', str(7 + 1))
-            line = line.replace('$nCorrs', str(1))
-
+            line = line.replace('$muR', str(scales[s][0]))
+            line = line.replace('$muF', str(scales[s][1]))
 
             fout.write(line)
 
 
-    copyfile('minuit.in.super', 'variants/y'+str(y)+'/minuit.in.txt')
-    copyfile('../../ewparam.txt', 'variants/y'+str(y)+'/ewparam.txt')
+    copyfile('minuit.in.super', 'variants/v'+str(s)+'/minuit.in.txt')
+    copyfile('../../ewparam.txt', 'variants/v'+str(s)+'/ewparam.txt')
 
     #if not os.path.exists(dirName+'/logs'):
     #    os.mkdir(dirName+'/logs')

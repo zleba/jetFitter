@@ -3,7 +3,7 @@
 
 &InFiles
   ! Number of intput files
-    NInputFiles = 11
+    NInputFiles = $nFiles
  
   ! Input files:
 
@@ -16,10 +16,10 @@
       'datafiles/hera/h1zeusCombined/inclusiveDis/1506.06042/HERA1+2_CCep.dat',
       'datafiles/hera/h1zeusCombined/inclusiveDis/1506.06042/HERA1+2_CCem.dat',
 
-      'datafiles/lhc/cms/jets/13TeV/table_ak4_nll_y0.dat',
-      'datafiles/lhc/cms/jets/13TeV/table_ak4_nll_y1.dat',
-      'datafiles/lhc/cms/jets/13TeV/table_ak4_nll_y2.dat',
-      'datafiles/lhc/cms/jets/13TeV/table_ak4_nll_y3.dat',
+$y0   'datafiles/lhc/cms/jets/13TeV/table_ak4_nll_y0.dat',
+$y1   'datafiles/lhc/cms/jets/13TeV/table_ak4_nll_y1.dat',
+$y2   'datafiles/lhc/cms/jets/13TeV/table_ak4_nll_y2.dat',
+$y3   'datafiles/lhc/cms/jets/13TeV/table_ak4_nll_y3.dat',
 
 
 
@@ -27,14 +27,14 @@
 
 &InCorr
   ! Number of correlation (statistical, systematical or full) files
-    NCorrFiles = 4
+    NCorrFiles = $nCorrs
  
   ! Correlation files:
     CorrFileNames =
-       'datafiles/lhc/cms/jets/13TeV/table_ak4_y0.corr',
-       'datafiles/lhc/cms/jets/13TeV/table_ak4_y1.corr',
-       'datafiles/lhc/cms/jets/13TeV/table_ak4_y2.corr',
-       'datafiles/lhc/cms/jets/13TeV/table_ak4_y3.corr',
+$y0    'datafiles/lhc/cms/jets/13TeV/table_ak4_y0.corr',
+$y1    'datafiles/lhc/cms/jets/13TeV/table_ak4_y1.corr',
+$y2    'datafiles/lhc/cms/jets/13TeV/table_ak4_y2.corr',
+$y3    'datafiles/lhc/cms/jets/13TeV/table_ak4_y3.corr',
 &End
 
 &CovarToNuisance
@@ -74,8 +74,8 @@
 * dependently. The numbering follows sequential numbering of input files
 *
 &Scales 
-    DataSetMuR  = 7*@muR    ! Set muR scale to 1 for all 4 datasets
-    DataSetMuF  = 7*@muF    ! Set muF scale to 1 for all 4 datasets
+    DataSetMuR  = 7*1.0     ! Set muR scale to 1 for all 4 datasets
+    DataSetMuF  = 7*1.0     ! Set muF scale to 1 for all 4 datasets
  !   DataSetTheoryOrder = 7*'NNLO',"NLO",'NNLO'
  !   DataSetMaxNF(2) = 4    ! Enable the H-VFNS (requires APFEL)
  !   DataSetMaxNF = 9*5
@@ -119,7 +119,7 @@
 
   Order  = 'NLO'       ! 'LO', 'NLO' or 'NNLO', used for DGLAP evolution.
 
-  Q02     = @Q02 ! Evolution starting scale
+  Q02     = 1.9 ! Evolution starting scale
 
  ! --- Scheme for heavy flavors 
  ! ---  HF_SCHEME = 'ZMVFNS'           : ZM-VFNS (massless) from QCDNUM,
@@ -151,7 +151,7 @@
  ! ---  HF_SCHEME = 'FONLL-C RUNM OFF' : FONLL-C mass scheme provided by APFEL with MSbar masses running OFF (available only at NNLO)
  ! ---  HF_SCHEME = 'FONLL-C RUNM ON'  : FONLL-C mass scheme provided by APFEL with MSbar masses running ON (available only at NNLO)
                                        ! (Any of the FONLL schemes at LO is equivalent to the ZM-VFNS)
-  HF_SCHEME = 'RT OPT'
+  HF_SCHEME = 'RT OPT FAST'
 
  ! PDF type. Possible types are currently available:
  ! 'proton'  -- default (fitting proton data)
@@ -212,7 +212,7 @@
 *
 &ExtraMinimisationParameters
    name  = 'alphas',   'fs',   'fcharm'
-   value =  0.118 ,    @fS,      0.
+   value =  0.118 ,   0.4,      0.
    step  =  0.001  ,   0.0 ,      0.     ! set to 0 to avoid minimisation 
 &End
 
@@ -254,7 +254,7 @@
   ! Rule #1: Q2 cuts
    ProcessName(1)     = 'NC e+-p'
    Variable(1)        = 'Q2'
-   CutValueMin(1)     = @q2MinData
+   CutValueMin(1)     = 3.5
    CutValueMax(1)     = 1000000.0
 
   ! Rule #2: x cuts
@@ -267,7 +267,7 @@
 
    ProcessName(3)     = 'CC e+-p'
    Variable(3)        = 'Q2'
-   CutValueMin(3)     = @q2MinData
+   CutValueMin(3)     = 3.5
    CutValueMax(3)     = 1000000.0
 
    ProcessName(4)     = 'CC e+-p'
@@ -307,7 +307,7 @@
 
    ProcessName(9)     = 'NC e+-p charm'
    Variable(9)        = 'Q2'
-   CutValueMin(9)     = @q2MinData 
+   CutValueMin(9)     = 3.5 
    CutValueMax(9)     = 10000.0
 
    ProcessName(10)     = 'NC e+-p charm'

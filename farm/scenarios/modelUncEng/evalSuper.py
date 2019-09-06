@@ -25,7 +25,8 @@ for vName in variations:
         dirName = 'variants/v'+str(v)
         if not os.path.exists(dirName):
             os.mkdir(dirName)
-        os.unlink(dirName+'/datafiles')
+        if os.path.exists(dirName+'/datafiles'):
+            os.unlink(dirName+'/datafiles')
         os.symlink('../../../../datafiles', dirName+'/datafiles')
 
         for fTag in ("steering", "minuit.in", "ewparam"):

@@ -14,7 +14,7 @@ getenv = True
 #dirName = checkFitAjetsext
 
 executable          = xfitter.sh
-arguments           = "$(Process)"
+arguments           = "$(dirName) $(Process)"
 #transfer_executable = True
 universe            = vanilla
 #input               = /nfs/dust/my/path/to/data/mypayload.data
@@ -43,7 +43,7 @@ log                 = $(dirName)/logs/$(Process).log
 # if not set, default is 3 hours
 # longer requested job run times get more hit in the fairshare calculation
 #
-+RequestRuntime     = 12500
++RequestRuntime     = 15500
 #
 #
 ##########################

@@ -16,25 +16,24 @@
       'datafiles/hera/h1zeusCombined/inclusiveDis/1506.06042/HERA1+2_CCep.dat',
       'datafiles/hera/h1zeusCombined/inclusiveDis/1506.06042/HERA1+2_CCem.dat',
 
-      'datafiles/lhc/cms/jets/13TeV/table_ak4_nll_y0.dat',
-      'datafiles/lhc/cms/jets/13TeV/table_ak4_nll_y1.dat',
-      'datafiles/lhc/cms/jets/13TeV/table_ak4_nll_y2.dat',
-      'datafiles/lhc/cms/jets/13TeV/table_ak4_nll_y3.dat',
-
+      'datafiles/lhc/cms/jets/13TeV/CMS_13TeV_jets_ak4_NLL_y1.dat',
+      'datafiles/lhc/cms/jets/13TeV/CMS_13TeV_jets_ak4_NLL_y2.dat',
+      'datafiles/lhc/cms/jets/13TeV/CMS_13TeV_jets_ak4_NLL_y3.dat',
+      'datafiles/lhc/cms/jets/13TeV/CMS_13TeV_jets_ak4_NLL_y4.dat',
 
 
 &End
 
 &InCorr
   ! Number of correlation (statistical, systematical or full) files
-    NCorrFiles = 4
+    NCorrFiles = 0
  
   ! Correlation files:
     CorrFileNames =
-       'datafiles/lhc/cms/jets/13TeV/table_ak4_y0.corr',
-       'datafiles/lhc/cms/jets/13TeV/table_ak4_y1.corr',
-       'datafiles/lhc/cms/jets/13TeV/table_ak4_y2.corr',
-       'datafiles/lhc/cms/jets/13TeV/table_ak4_y3.corr',
+!       'datafiles/lhc/cms/jets/13TeV/table_ak4_y0.corr',
+!       'datafiles/lhc/cms/jets/13TeV/table_ak4_y1.corr',
+!       'datafiles/lhc/cms/jets/13TeV/table_ak4_y2.corr',
+!       'datafiles/lhc/cms/jets/13TeV/table_ak4_y3.corr',
 &End
 
 &CovarToNuisance
