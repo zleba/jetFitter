@@ -52,7 +52,7 @@ for Ord in orders:
                                 line = line.replace('$cone', 'ak7')
                         elif data == 'hera':
                             line = line.replace('$nFiles', '7')
-                            line = line.replace('$nFilesCorr', '0')
+                            line = line.replace('$nCorr', '0')
                             for y in range(4):
                                 line = line.replace('$jetY'+str(y), '      ')
 
