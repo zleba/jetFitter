@@ -3,3 +3,4 @@ export LHAPDF_DATA_PATH=/cvmfs/sft.cern.ch/lcg/external/lhapdfsets/current/:`lha
 
 export PATH=$PWD/qcdnum/bin:$PATH
 export PATH=$PWD/xfitterBuild/bin:$PATH
+export MAINDIR=$PWD

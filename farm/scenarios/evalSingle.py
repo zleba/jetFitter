@@ -41,12 +41,14 @@ for vName in variations:
             os.mkdir(dirName)
         if os.path.exists(dirName+'/datafiles'):
             os.unlink(dirName+'/datafiles')
-        os.symlink('../../../../datafiles', dirName+'/datafiles')
+
+        #print os.environ["MAINDIR"]
+        os.symlink(os.environ['MAINDIR'] +'/farm/datafiles', dirName+'/datafiles') #  '../../../../datafiles', dirName+'/datafiles')
 
         for fTag in ("steering", "minuit.in", "ewparam"):
 
             fName = curDir+'/variants/v'+str(v) + '/' + fTag + '.txt'
-            fin = open(curDir + '/' + fTag + '.super', "rt")
+            fin = open(curDir + '/' + fTag + '.str', "rt")
 
             print fName
             with open(fName, "wt") as fout:
