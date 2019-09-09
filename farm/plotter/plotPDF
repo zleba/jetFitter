@@ -1,0 +1,1 @@
+xfitter-draw  --ratiorange 0.5:1.5  --relative-errors --q2all   --bands   ../scenarios/modelUnc/variants/v0/output:v0  ../scenarios/modelUnc/variants/v1/output:v1 --outdir out  --no-shifts --no-data
