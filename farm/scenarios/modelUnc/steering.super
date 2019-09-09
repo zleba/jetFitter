@@ -151,7 +151,7 @@
  ! ---  HF_SCHEME = 'FONLL-C RUNM OFF' : FONLL-C mass scheme provided by APFEL with MSbar masses running OFF (available only at NNLO)
  ! ---  HF_SCHEME = 'FONLL-C RUNM ON'  : FONLL-C mass scheme provided by APFEL with MSbar masses running ON (available only at NNLO)
                                        ! (Any of the FONLL schemes at LO is equivalent to the ZM-VFNS)
-  HF_SCHEME = 'RT OPT'
+  HF_SCHEME = 'RT OPT FAST'
 
  ! PDF type. Possible types are currently available:
  ! 'proton'  -- default (fitting proton data)
@@ -213,7 +213,7 @@
 &ExtraMinimisationParameters
    name  = 'alphas',   'fs',   'fcharm'
    value =  0.118 ,    @fS,      0.
-   step  =  0.001  ,   0.0 ,      0.     ! set to 0 to avoid minimisation 
+   step  =  0.000  ,   0.0 ,      0.     ! set to 0 to avoid minimisation 
 &End
 
 
@@ -222,12 +222,11 @@
 *
 &Output 
   ! -- Error bands on parton distributions
-  DoBands = False        ! asymmetric bands (J. Pumplin)
+  DoBands = True        ! asymmetric bands (J. Pumplin)
   DoBandsSym = False     ! symmetric bands ( HESSE )
 
   ! -- Q2 values at which the pdfs & errors are done (up to 20)
-  Q2VAL = 1.9, 3.0, 4.0, 5., 10., 100., 6464, 8317 
-!  Q2VAL = 1.9, 4., 10., 100., 6464, 8317 
+  Q2VAL = 1.9, 3.0, 4.0, 5., 10., 100., 6464, 8317, 100000
 
   ! How many x points to write (standard = 101)
   OUTNX = 101
